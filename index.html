@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTU Cross-Reference — Competitor → Rheem R-454B</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">RTU Cross-Reference <span class="sub">Carrier &amp; Trane → current Rheem R-454B packaged units &amp; split systems</span></div>
+  <nav id="tabs">
+    <button data-tab="cross" class="active">Cross a model</button>
+    <button data-tab="browse">Browse competitors</button>
+    <button data-tab="lineup">Rheem lineup</button>
+    <button data-tab="splits">Splits</button>
+    <button data-tab="sources">Sources &amp; method</button>
+  </nav>
+</header>
+<main>
+<section id="tab-cross" class="tab active">
+  <div class="searchbar">
+    <input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="Competitor model, e.g. 50GEQM06A2A5, WHK060A3 — or wildcards: RHPDYB090*, *090*, 27TPA?36*">
+  </div>
+  <div class="examples">Try:
+    <a href="#" data-ex="50GEQM06A2A5">50GEQM06A2A5</a> <a href="#" data-ex="WHK060A3">WHK060A3</a> <a href="#" data-ex="WSK">WSK</a>
+    <a href="#" data-ex="48FEDM12A2A6">48FEDM12A2A6</a> <a href="#" data-ex="YHK240A4S0H">YHK240A4S0H</a> <a href="#" data-ex="50NR-B36---5">50NR-B36---5</a> <a href="#" data-ex="TSC090A3EG">TSC090A3EG</a>
+  </div>
+  <div id="result"></div>
+</section>
+<section id="tab-browse" class="tab">
+  <div class="filters">
+    <label>Brand <select id="fBrand"><option value="">All</option><option>Carrier</option><option>Trane</option></select></label>
+    <label>Type <select id="fType"><option value="">All</option><option value="AC">Cooling / electric heat</option><option value="GE">Gas/electric</option><option value="HP">Heat pump</option><option value="DF">Dual fuel</option></select></label>
+    <label>Tonnage <select id="fTons"><option value="">All</option></select></label>
+    <label>Model / family <input id="fText" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. WSK*, *090*, 50NR-B6*" style="width:12em"></label>
+    <label>Class <select id="fCls"><option value="">All</option><option value="commercial">Commercial</option><option value="residential">Residential</option></select></label>
+  </div>
+  <div id="browse"></div>
+</section>
+<section id="tab-lineup" class="tab"><div id="lineup"></div></section>
+<section id="tab-splits" class="tab">
+  <nav id="splitNav" class="subnav">
+    <button data-sp="lookup" class="active">Cross a split</button>
+    <button data-sp="browse">Browse split competitors</button>
+    <button data-sp="lineup">Rheem split lineup</button>
+  </nav>
+  <div id="sp-lookup" class="spane">
+    <div class="searchbar"><input id="sq" type="text" autocomplete="off" spellcheck="false" placeholder="Outdoor unit model, e.g. 26SCA436N003, 5TTR6036A1000A, TTA120K4D — or wildcards: RA1?AY36*, 27TPA?36*"></div>
+    <div class="examples">Try:
+      <a href="#" data-sx="26SCA436N006">26SCA436N006</a> <a href="#" data-sx="27TPA836A003">27TPA836A003</a> <a href="#" data-sx="26VNA136W003">26VNA136W003</a>
+      <a href="#" data-sx="5TTR6036A1000A">5TTR6036A1000A</a> <a href="#" data-sx="5TWR4048A1000A">5TWR4048A1000A</a> <a href="#" data-sx="38AXZM08A0A6">38AXZM08A0A6</a> <a href="#" data-sx="TWA090K3A">TWA090K3A</a>
+    </div>
+    <div class="note"><b>Efficiency rule:</b> split SEER2 / EER2 / HSPF2 is a property of the outdoor + indoor (+ furnace) AHRI matchup. Outdoor-only numbers are shown as ranges or printed DTC rows and labelled <span class="unv">per AHRI matchup — verify</span>.</div>
+    <div id="sresult"></div>
+  </div>
+  <div id="sp-browse" class="spane" style="display:none">
+    <div class="filters">
+      <label>Brand <select id="sfBrand"><option value="">All</option><option>Carrier</option><option>Trane</option></select></label>
+      <label>Type <select id="sfType"><option value="">All</option><option value="AC">Split AC</option><option value="HP">Split heat pump</option></select></label>
+      <label>Model <input id="sfText" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. 27TPA?36*, 5TTR*, *090*" style="width:12em"></label>
+      <label>Class <select id="sfCls"><option value="">All</option><option value="residential">Residential</option><option value="commercial">Commercial</option></select></label>
+    </div>
+    <div id="sbrowse"></div>
+  </div>
+  <div id="sp-lineup" class="spane" style="display:none"><div id="slineup"></div></div>
+</section>
+<section id="tab-sources" class="tab"><div id="sources"></div></section>
+</main>
+<footer>Last verified <b id="lv"></b> against the manufacturer literature listed under “Sources &amp; method”. Spec-sheet links open the copy on Google Drive (works for anyone with access to that Drive). Anything marked <span class="unv">unverified</span> was not confirmed in a document — confirm before quoting.</footer>
+<script src="data.js"></script>
+<script src="engine.js"></script>
+<script src="splits.js"></script>
+<script src="search.js"></script>
+<script src="app.js"></script>
+<script src="splits-ui.js"></script>
+</body>
+</html>
